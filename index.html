@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebService Javascript</title>
+    
+    <script>
+        fetch('http://www.raydelto.org/json.php')
+        .then((respuesta) => {
+            return respuesta.json();
+        }).then((respuesta) => {
+            document.getElementById('name').value = respuesta.name;
+            document.getElementById('lastName').value = respuesta.lastName;
+        })
+    </script>
+
+</head>
+<body>
+    <div id="information">
+        <input type="text" id="name" value="Loading..."/>
+        <input type="text" id="lastName" value = "Loading..."/>
+    </div>
+</body>
+</html>
